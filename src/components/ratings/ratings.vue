@@ -79,7 +79,7 @@
       };
     },
     created () {
-      this.$http.get('/static/data.json').then((response) => {
+      this.$http.get('./static/data.json').then((response) => {
         response = response.body;
           this.ratings = response.ratings;
           this.$nextTick(() => {

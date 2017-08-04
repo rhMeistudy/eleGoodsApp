@@ -92,7 +92,7 @@
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
 
-      this.$http.get('/static/data.json').then((response) => {
+      this.$http.get('./static/data.json').then((response) => {
         response = response.body;
         this.goods = response.goods;
           this.$nextTick(() => {
