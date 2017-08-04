@@ -79,16 +79,14 @@
       };
     },
     created () {
-      this.$http.get('/api/ratings').then((response) => {
+      this.$http.get('/static/data.json').then((response) => {
         response = response.body;
-        if (response.errno === ERR_OK) {
-          this.ratings = response.data;
+          this.ratings = response.ratings;
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$els.ratings, {
               click: true
             });
           });
-        }
       });
     },
     methods: {

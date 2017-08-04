@@ -35,12 +35,13 @@
       };
     },
     created () {
-      this.$http.get('./api/seller?id=' + this.seller.id).then((response) => {
+      this.$http.get('./static/data.json?id=' + this.seller.id).then((response) => {
         response = response.body;
-//        console.log(response);
-        if (response.errno === ERR_OK) {
-          this.seller = Object.assign({}, this.seller, response.data);
-        }
+       console.log(response);
+        this.seller = Object.assign({}, this.seller, response.seller);
+        // if (response.errno === ERR_OK) {
+        //   this.seller = Object.assign({}, this.seller, response.data);
+        // }
       });
     },
     components: {
